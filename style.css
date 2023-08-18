@@ -14,12 +14,12 @@
 
 @font-face {
     font-family: Poppins;
-    src: url(../age-calculator-app-main/assets/fonts/Poppins-Bold.ttf);
+    src: url(./assets/fonts/Poppins-Bold.ttf);
 }
 
 @font-face {
     font-family: PoppinsItalics;
-    src: url(../age-calculator-app-main/assets/fonts/Poppins-ExtraBoldItalic.ttf);
+    src: url(./assets/fonts/Poppins-ExtraBoldItalic.ttf);
 }
 
 body {
