@@ -79,6 +79,14 @@ input::placeholder {
     margin-bottom: 20px;
 }
 
+img {
+    background-color: var(--Purple);
+    position: absolute;
+    top: 122px;
+    right: 60px;
+    border-radius: 50px;
+}
+
 p {
     font-family: PoppinsItalics;
     font-weight: bolder;
