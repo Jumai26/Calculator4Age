@@ -79,12 +79,14 @@ input::placeholder {
     margin-bottom: 20px;
 }
 
-img {
+#submit {
     background-color: var(--Purple);
     position: absolute;
-    top: 122px;
-    right: 60px;
-    border-radius: 50px;
+    top: 110px;
+    right: 65px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
 
 p {

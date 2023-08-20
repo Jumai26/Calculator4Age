@@ -1,33 +1,30 @@
-let day = document.getElementById('day');
-let month = document.getElementById('month');
-let year = document.getElementById('year');
+let day = document.getElementById('day').value;
+let month = document.getElementById('month').value;
+let year = document.getElementById('year').value;
 let btn = document.getElementById('btn');
-let currentDay = new Date() //.toLocaleDateString('en-GB');
-// let currentYear = currentDay.getYear();
-// let currentMonth = currentDay.getMonth();
-// let currentDate = currentDay.getDate();
+let currentDay = new Date() 
 console.log(currentDay.toLocaleDateString('en-GB'));
 let inputedDate = new Date(` ${day.value}/${month.value}/${year.value} `);
-console.log(inputedDate.toLocaleDateString('en-GB'));
 
 
 
-// function checkAge() {
-// if (day.value < 01) {
-//     alert('Day is incorrect');
-// } else if (day.value > 31) {
-//     alert('day is incorrect');
-// } else if (month.value < 1) {
-//     alert('month is incorrect');
-// }else if (month.value > 12) {
-//     alert('month is incorrect');
-// }else if (year.value > 2023) {
-//     alert('year is incorrect');
-// } else {
-//     let inputedDate = new Date(` ${day.value}/${month.value}/${year.value} `); 
-//     console.log(inputedDate.toLocaleDateString('en-GB'));
-// }
-// }
+
+function checkAge() {
+if (day.value < 01) {
+    alert('Day is incorrect');
+} else if (day.value > 31) {
+    alert('day is incorrect');
+} else if (month.value < 1) {
+    alert('month is incorrect');
+}else if (month.value > 12) {
+    alert('month is incorrect');
+}else if (year.value > 2023) {
+    alert('year is incorrect');
+} else {
+    let inputedDate = new Date(` ${day}/${month.value}/${year.value} `); 
+    console.log(inputedDate.toLocaleDateString('en-GB'));
+}
+}
 
 
 // let realAge = currentDay.getTime() - inputedDate.getTime();
