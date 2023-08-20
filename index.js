@@ -2,17 +2,6 @@ let day = document.getElementById("day");
 let month = document.getElementById("month");
 let year = document.getElementById("year");
 
-let currentDate = new Date();
-let currentDay = currentDate.getDate();
-let currentMonth = 1 + currentDate.getMonth();
-let currentYear = currentDate.getFullYear();
-let eachMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-let d = currentDay - day;
-let m = currentMonth - month;
-let y = currentYear - year;
-let btn = document.getElementById("btn");
-
 function checkAge() {
   if (day.value < 01) {
     alert("Day is incorrect");
@@ -28,13 +17,38 @@ function checkAge() {
 
   if (month.value > 12) {
     alert("month is incorrect");
-  } else
+  // } else
 
-  if (year.value > 2023);
-  {
+  // if (year.value > 2023);
+  // {
+  //   alert("year is incorrect");
+  } else 
+
+  if (year.value > 2023) {
     alert("year is incorrect");
-  } 
+  } else 
 
+  {
+    day = document.getElementById("day");
+    month = document.getElementById("month");
+    year = document.getElementById("year");
+  }
+} 
+
+
+let currentDate = new Date();
+let currentDay = currentDate.getDate();
+let currentMonth = 1 + currentDate.getMonth();
+let currentYear = currentDate.getFullYear();
+let eachMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+let d = currentDay - day;
+let m = currentMonth - month;
+let y = currentYear - year;
+let btn = document.getElementById("btn");
+
+
+function age() {
   if (day > currentDay) {
     let currentDay = currentDay + eachMonth[currentMonth - 1];
     let currentMonth = currentMonth - 1;
@@ -47,8 +61,7 @@ function checkAge() {
 
     let birthCount = d + " / " + m + " / " + y;
     console.log(birthCount);
-  }
-  
+} 
 
 
-btn.addEventListener("click", checkAge);
+btn.addEventListener("click", age);
