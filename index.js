@@ -1,12 +1,13 @@
-let day = document.getElementById('day').value;
-let month = document.getElementById('month').value;
-let year = document.getElementById('year').value;
+let day = document.getElementById('day');
+let month = document.getElementById('month');
+let year = document.getElementById('year');
 let btn = document.getElementById('btn');
-let currentDay = new Date() 
-console.log(currentDay.toLocaleDateString('en-GB'));
-let inputedDate = new Date(` ${day.value}/${month.value}/${year.value} `);
-
-
+let currentDate = new Date();
+console.log(currentDate);
+// let currentDay = currentDate.getDate();
+// let currentMonth = 1 + currentDate.getMonth();
+// let currentYear = currentDate.getFullYear();
+// let inputedDate = ` ${day}/${month}/${year} `;
 
 
 function checkAge() {
@@ -21,10 +22,16 @@ if (day.value < 01) {
 }else if (year.value > 2023) {
     alert('year is incorrect');
 } else {
-    let inputedDate = new Date(` ${day}/${month.value}/${year.value} `); 
-    console.log(inputedDate.toLocaleDateString('en-GB'));
+    let inputedDate = day.value + "/ " + month.value + "/ " + year.value ; 
+    console.log(inputedDate);
 }
 }
+
+btn.addEventListener('click', checkAge());
+
+
+
+
 
 
 // let realAge = currentDay.getTime() - inputedDate.getTime();
@@ -40,6 +47,6 @@ if (day.value < 01) {
 
 
 
-btn.addEventListener('click', inputedDate);
+
 
 
