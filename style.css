@@ -79,7 +79,7 @@ input::placeholder {
     margin-bottom: 20px;
 }
 
-#submit {
+#btn {
     background-color: var(--Purple);
     position: absolute;
     top: 110px;
@@ -87,6 +87,10 @@ input::placeholder {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+}
+
+btn:hover {
+    transform: rotate(90deg);
 }
 
 p {
