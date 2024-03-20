@@ -93,6 +93,12 @@ btn:hover {
     transform: rotate(90deg);
 }
 
+#error-message {
+    color:hsl(0, 100%, 67%);
+    font-size: 12px;
+    margin-top: -30px;
+}
+
 p {
     font-family: PoppinsItalics;
     font-weight: bolder;

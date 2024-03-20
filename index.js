@@ -1,67 +1,66 @@
-let day = document.getElementById("day");
-let month = document.getElementById("month");
-let year = document.getElementById("year");
+const dayInput = document.getElementById("day");
+const monthInput = document.getElementById("month");
+const yearInput = document.getElementById("year");
+const sendBtn = document.getElementById("btn")
+const errorMessage = document.getElementById("error-message");
+errorMessage.innerText = "";
+
+const currentDate = new Date();
+const currentDay = currentDate.getDate();
+const currentMonth = 1 + currentDate.getMonth();
+const currentYear = currentDate.getFullYear();
+const todayDate = `${currentYear}-${currentMonth}-${currentDay}`;
+
+console.log(currentDate);
+console.log(currentDay);
+console.log(currentMonth);
+console.log(currentYear);
+console.log(todayDate);
 
 function checkAge() {
-  if (day.value < 01) {
-    alert("Day is incorrect");
-  } else
-
-  if (day.value > 31) {
-    alert("day is incorrect");
-  } else
-
-  if (month.value < 1) {
-    alert("month is incorrect");
-  } else
-
-  if (month.value > 12) {
-    alert("month is incorrect");
-  // } else
-
-  // if (year.value > 2023);
-  // {
-  //   alert("year is incorrect");
-  } else 
-
-  if (year.value > 2023) {
-    alert("year is incorrect");
-  } else 
-
-  {
-    day = document.getElementById("day");
-    month = document.getElementById("month");
-    year = document.getElementById("year");
+  if (dayInput.value < 1) {
+    errorMessage.innerText = "Day is incorrect";
+  } else if (dayInput.value > 29 && monthInput.value == 2) {
+    errorMessage.innerText = "Day or Month is incorrect";
+  } else if (dayInput.value > 31 ) {
+    errorMessage.innerText = "day is incorrect";
+  } else if (monthInput.value < 1 || monthInput.value > 12) {
+    errorMessage.innerText = "month is incorrect";
+  } else if (yearInput.value > currentYear) {
+    errorMessage.innerText = "year is incorrect";
+  } else {
+    errorMessage.innerHTML = "";
+    const inputDate = convertStringToDate(`${yearInput.value }-${month.value}-${day.value}`);
+    const age = calculateAge(inputDate, currentDate);
+    console.log(age);
   }
-} 
+};
 
+function convertStringToDate(yourDate) {
+  const [year, month, date] = yourDate.split('-'); // Split the dateString into an array of year, month, and date
+  const convertedDate = new Date(year, month - 1, date);   // Create a new Date object
+  return convertedDate;
+};
 
-let currentDate = new Date();
-let currentDay = currentDate.getDate();
-let currentMonth = 1 + currentDate.getMonth();
-let currentYear = currentDate.getFullYear();
-let eachMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+function calculateAge(inputDate, currentDate) {
+  let years = currentDate.getFullYear() - inputDate.getFullYear();
+  let months = currentDate.getMonth() - inputDate.getMonth();
+  let days = currentDate.getDate() - inputDate.getDate();
 
-let d = currentDay - day;
-let m = currentMonth - month;
-let y = currentYear - year;
-let btn = document.getElementById("btn");
+  if (months < 0 || (months === 0 && days < 0)) {
+      years--;
+      months += (months < 0 ? 12 : 0);
+  }
+  if (days < 0) {
+      const prevMonthLastDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
+      days += prevMonthLastDay;
+      months--;
+  }
 
+  return { years, months, days };
+}
 
-function age() {
-  if (day > currentDay) {
-    let currentDay = currentDay + eachMonth[currentMonth - 1];
-    let currentMonth = currentMonth - 1;
-  } 
-  
-  if (month > currentMonth) {
-    let currentMonth = currentMonth + 12;
-    let currentYear = currentYear - 1;
-  } 
-
-    let birthCount = d + " / " + m + " / " + y;
-    console.log(birthCount);
-} 
-
-
-btn.addEventListener("click", age);
+sendBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  checkAge();
+});
