@@ -52,7 +52,7 @@ form {
     font-size: 11px;
     font-family: Poppins;
     color: var(--Smokey_grey);
-    letter-spacing: 1px;
+    letter-spacing: 4px;
 }
 
 input {
@@ -113,4 +113,67 @@ span {
     margin-top: 10px;
     font-size: larger;
     
+}
+
+@media screen and (max-width: 700px) {
+    .container {
+        width: 70vw;
+        height: fit-content;
+        padding-right: 0;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    input {
+        margin-top: 6px;
+        width: 50vw;
+        height: 50px;
+        border: 0.5px solid var(--Light_grey);
+        border-radius: 5px;
+        font-family: Poppins;
+        font-size:x-large;
+        padding-left: 10px;
+    }
+
+    .line {
+        margin-top: 10;
+        margin-left: -10vw;
+        padding: 0px;
+        width: 100vw;
+    }
+
+    #btn {
+        background-color: var(--Purple);
+        position: absolute;
+        top: 284px;
+        right: 5px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: row;
+    }
+
+    span {
+        text-align: center;
+        align-items: center;
+    }
+
+    #error-message {
+        margin-top: 10px;
+    }
+
+    p {
+        font-family: PoppinsItalics;
+        font-weight: 100px;
+        font-size: 30px;
+        line-height: 40px;
+    
+    }
 }
